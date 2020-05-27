@@ -1,0 +1,20 @@
+sensor:
+# ZeverSolar Inverter Local Data Sensors
+  - platform: rest
+    name: Solar Error #0 When No Error
+    resource: http://<zeversolar_ip_here>/home.cgi
+    value_template: "{{ value.split()[8].split()[0] }}" 
+  - platform: rest
+    name: Solar Pac
+    unit_of_measurement: W
+    resource: http://<zeversolar_ip_here>/home.cgi
+    value_template: "{{ value.split()[11].split()[0] }}"
+  - platform: rest
+    name: Solar E_Today
+    unit_of_measurement: KWh  
+    resource: http://<zeversolar_ip_here>/home.cgi
+    value_template: "{{ value.split()[12].split()[0] }}"
+  - platform: rest
+    name: Solar Status #OK When No Error
+    resource: http://<zeversolar_ip_here>/home.cgi
+    value_template: "{{ value.split()[13].split()[0] }}" 
