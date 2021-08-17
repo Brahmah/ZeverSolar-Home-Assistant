@@ -11,7 +11,7 @@ sensor:
     value_template: "{{ value.split()[11].split()[0] }}"
   - platform: rest
     name: Solar E_Today
-    unit_of_measurement: KWh  
+    unit_of_measurement: kWh  
     resource: http://<zeversolar_ip_here>/home.cgi
     value_template: "{{ value.split()[12].split()[0] }}"
   - platform: rest
